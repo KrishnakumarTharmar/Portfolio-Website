@@ -6,10 +6,10 @@
     --primary-color-second: hsl(250, 69%, 61%);
     --primary-color-alt: hsl(250, 57%, 53%);
     --primary-color-lighter: hsl(250, 92%, 85%);
-    --title-color: hsl(250, 8%, 15%);
-    --text-color: hsl(250, 8%, 45%);
+    --title-color: hsl(0, 0%, 100%);
+    --text-color: hsl(0, 0%, 100%);
     --text-color-light: hsl(250, 8%, 65%);
-    --bg-color: hsl(250, 60%, 99%);
+    --bg-color: hsl(0, 0%, 0%);
     --input-color: hsl(250, 70%, 96%);
     --max-width: 1200px;
 }
@@ -174,15 +174,21 @@ nav input {
 }
 
 .home__title {
-    font-size: 3rem;
+    font-size: 3.5rem;
 
 }
 
 .home__subtitle {
-    font-size: 1.25rem;
-    color: var(--text-color);
-    font-weight: 500;
+    font-size: 2rem;
     margin-bottom: .75rem;
+    color: var(--text-color);
+}
+
+.home__subtitle span {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 2rem;
+
 }
 
 .home__description {
@@ -388,11 +394,13 @@ nav input {
     cursor: pointer;
     text-decoration: none;
     border: 2px solid transparent;
-    transition: border 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 .card-list .card-item:hover {
-    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color-second);
+    transform: scale(1.05);
+
 }
 
 .card-list .card-item img {
@@ -400,6 +408,7 @@ nav input {
     aspect-ratio: 16/9;
     border-radius: 8px;
     object-fit: cover;
+    transition: all 0.3s ease;
 }
 
 .card-list span {
@@ -415,6 +424,7 @@ nav input {
 .card-list .developer {
     background-color: #F7DFF5;
     color: #B22485;
+    transition: all 0.3s ease;
 }
 
 .card-list .designer {
@@ -428,15 +438,17 @@ nav input {
 }
 
 .card-item h3 {
-    color: var(--title-color);
+    color: var(--bg-color);
     font-size: 1.25rem;
     margin-top: 28px;
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .card-item p {
-    color: var(--text-color);
+    color: var(--bg-color);
     text-align: justify;
+    transition: all 0.3s ease;
 }
 
 .card-item .arrow {
@@ -453,8 +465,16 @@ nav input {
 }
 
 .card-list .card-item:hover .arrow {
-    background: var(--primary-color);
-    color: #fff;
+    background: var(--text-color);
+    color: var(--primary-color);
+}
+
+.card-list .card-item:hover p {
+    color: var(--text-color);
+}
+
+.card-list .card-item:hover h3 {
+    color: var(--text-color);
 }
 
 /* Contact Section */
@@ -546,7 +566,7 @@ footer {
 }
 
 footer a {
-    color: var(--title-color);
+    color: var(--bg-color);
 }
 
 .footer__logo {
@@ -582,7 +602,7 @@ footer a {
 }
 
 .footer__social-icons a {
-    background: var(--title-color);
+    background: var(--bg-color);
     border: 1px solid transparent;
     border-radius: 50%;
     color: #fff;
